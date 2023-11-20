@@ -112,3 +112,6 @@ source $ZSH/oh-my-zsh.sh
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 alias thmvpn="sudo openvpn .ParthChopra.ovpn"
+alias cracking="cat /home/bluesniffer/.cracking"
+alias academyvpn="sudo openvpn .academy-regular.ovpn"
+alias labsvpn="sudo openvpn .labsvpn"

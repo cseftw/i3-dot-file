@@ -1,0 +1,25 @@
+{
+    "schema_version": 2,
+    "timestamp": 1594280443,
+    "workspace": {
+        "0": [
+            [
+                 {
+                    "panes": [
+                        {
+                            "type": "term",
+                            "directory": "/home/bluesniffer/ctf-tools/poor-mans-pentest",
+                            "custom_colors": {
+                                "fg_color": null,
+                                "bg_color": null,
+                                "palette": null
+                            }
+                        }
+                    ],
+                    "label": "home",
+                    "custom_label_set": true
+               }
+            ]
+        ]
+    }
+}

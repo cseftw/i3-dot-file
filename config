@@ -137,7 +137,7 @@ bar {
         font pango:RobotoMono Nerd Font Regular 7.5
         colors {
             statusline #EEEEEE
-            background #1C1D2B88
+            background #1C1D2B88 
             focused_workspace #282A3E88 #282A3E88 #FFFFFF
             statusline #E6FFF5
         }
@@ -200,3 +200,6 @@ exec joplin
 #brightness -U decreases the brightness and -A increases the brightness
 bindsym $mod+F2 exec light -U 5 
 bindsym $mod+F3 exec light -A 5
+
+#bluetooth startup
+exec --no-startup-id blueman-applet &

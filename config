@@ -203,3 +203,6 @@ bindsym $mod+F3 exec light -A 5
 
 #bluetooth startup
 exec --no-startup-id blueman-applet &
+
+#wifi widget startup
+exec --no-startup-id nm-applet & 

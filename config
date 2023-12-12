@@ -207,5 +207,5 @@ exec --no-startup-id blueman-applet &
 #wifi widget startup
 exec --no-startup-id nm-applet &
 
-#Start pokit-gnome which ask for authentication
+#Start  polkit-gnome-authentication-agent-1 which ask for authentication
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1

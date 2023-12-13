@@ -115,3 +115,12 @@ alias thmvpn="sudo openvpn .ParthChopra.ovpn"
 alias cracking="cat /home/bluesniffer/.cracking"
 alias academyvpn="sudo openvpn .academy-regular.ovpn"
 alias labsvpn="sudo openvpn .labsvpn"
+
+fcd() {
+   cd "$(find -type d | fzf)"
+} 
+open(){
+xdg-open "$(find -type f | fzf)" 
+}
+
+alias getpath="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c"

@@ -119,8 +119,8 @@ alias labsvpn="sudo openvpn .labsvpn"
 fcd() {
    cd "$(find -type d | fzf)"
 } 
-openit(){
-     xdg-open "$(find -type f | fzf)" 
+open(){
+   xdg-open "$(find -type f | fzf)" 
 }
 
 alias getpath="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c"

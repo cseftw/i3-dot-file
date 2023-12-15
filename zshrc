@@ -111,10 +111,12 @@ source $ZSH/oh-my-zsh.sh
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 #PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
+
 alias thmvpn="sudo openvpn .ParthChopra.ovpn"
 alias cracking="cat /home/bluesniffer/.cracking"
 alias academyvpn="sudo openvpn .academy-regular.ovpn"
 alias labsvpn="sudo openvpn .labsvpn"
+alias bat="batcat"
 
 fcd() {
    cd "$(find -type d | fzf)"

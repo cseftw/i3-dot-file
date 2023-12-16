@@ -110,6 +110,7 @@ source $ZSH/oh-my-zsh.sh
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
 #PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 
 alias thmvpn="sudo openvpn .ParthChopra.ovpn"
@@ -117,6 +118,9 @@ alias cracking="cat /home/bluesniffer/.cracking"
 alias academyvpn="sudo openvpn .academy-regular.ovpn"
 alias labsvpn="sudo openvpn .labsvpn"
 alias bat="batcat"
+alias getpath="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c"
+alias hst='inpt=$(history | cut -c 8- | fzf -0 --tac) && echo "$inpt" | xclip -r -selection c'
+
 
 fcd() {
    cd "$(find -type d | fzf)"
@@ -125,4 +129,3 @@ open(){
     xdg-open "$(find -type f | fzf)" 
 }
 
-alias getpath="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c"

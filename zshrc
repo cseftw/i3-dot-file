@@ -113,7 +113,7 @@ source $ZSH/oh-my-zsh.sh
 
 #PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 
-alias thmvpn="sudo openvpn .ParthChopra.ovpn"
+alias thmvpn="sudo openvpn .sudoboy.ovpn"
 alias cracking="cat /home/bluesniffer/.cracking"
 alias academyvpn="sudo openvpn .academy-regular.ovpn"
 alias labsvpn="sudo openvpn .labsvpn"

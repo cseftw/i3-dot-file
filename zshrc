@@ -129,3 +129,6 @@ open(){
     xdg-open "$(find -type f | fzf)" 
 }
 
+
+# Created by `pipx` on 2023-12-19 19:52:04
+export PATH="$PATH:/home/bluesniffer/.local/bin"

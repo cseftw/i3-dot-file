@@ -68,10 +68,10 @@ bindsym $mod+a focus parent
 #bindsym $mod+d focus child
 
 #variables for workspaces
-
 set $workspace2 "2: FireFox  "
 set $workspace10 "10: Discord"
 set $workspace9 "9: Notes  "
+
 # switch to workspace
 bindsym $mod+1 workspace 1
 bindsym $mod+2 workspace $workspace2
@@ -98,7 +98,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 assign [class="discord"] $workspace10
 assign [class="Firefox-esr"] $workspace2
-assign [class="Joplin"]$workspace9
+assign [class="obsidian"]$workspace9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -193,7 +193,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec firefox
 exec discord
-exec joplin
+exec obsidian
 
 #exec_always ~/.config/polybar/launch.sh &
 
@@ -207,5 +207,6 @@ exec --no-startup-id blueman-applet &
 #wifi widget startup
 exec --no-startup-id nm-applet &
 
-#Start  polkit-gnome-authentication-agent-1 which ask for authentication
+#Start polkit-gnome-authentication-agent-1 which ask for authentication
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
+

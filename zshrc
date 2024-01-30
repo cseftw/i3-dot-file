@@ -124,7 +124,7 @@ alias hst='inpt=$(history | cut -c 8- | fzf -0 --tac) && echo "$inpt" | xclip -r
 alias vim="nvim"
 alias vpnip="ip -4 addr show tun0 | grep -oP \"(?<=inet\s)\d+(\.\d+){3}\""
 alias pwdcp="echo -n $(pwd) | xclip -selection clipboard"
-alias ctc="xclip -selection c"
+alias ctc="tr -d '\n' | xclip -selection c"
 
 #functions
 

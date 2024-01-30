@@ -113,6 +113,7 @@ source $ZSH/oh-my-zsh.sh
 
 #PROMPT="$fg[cyan]%}$USER@%{$fg[blue]%}%m ${PROMPT}"
 
+## Aliases
 alias thmvpn="sudo openvpn .sudoboy.ovpn"
 alias cracking="cat /home/bluesniffer/.cracking"
 alias academyvpn="sudo openvpn .academy-regular.ovpn"
@@ -120,15 +121,62 @@ alias labsvpn="sudo openvpn .labsvpn"
 alias bat="batcat"
 alias getpath="find -type f | fzf | sed 's/^..//' | tr -d '\n' | xclip -selection c"
 alias hst='inpt=$(history | cut -c 8- | fzf -0 --tac) && echo "$inpt" | xclip -r -selection c'
+alias vim="nvim"
+alias vpnip="ip -4 addr show tun0 | grep -oP \"(?<=inet\s)\d+(\.\d+){3}\""
+alias pwdcp="echo -n $(pwd) | xclip -selection clipboard"
+alias ctc="xclip -selection c"
 
+#functions
 
+#mcd - make a new directory and navigate to it 
+mcd() {
+    mkdir -p -- "$1" && cd -P -- "$1";
+}
+
+## HTTP Server
+serve() {
+    PORT=$1
+    DIR=$2
+    echo "Serving files from $DIR"
+    python3 -m http.server "$PORT" --directory "$DIR"
+}
+
+## Netcat Reverse shell
+rev() {
+    PORT=$1
+    echo "Starting Netcat Listener on $PORT"
+    echo "# python -c "import pty;pty.spawn(\"/bin/bash\")""
+    echo "# python3 -c "import pty;pty.spawn(\"/bin/bash\")""
+    rlwrap -cAr nc -lvnp "$PORT"
+}
+## Get fullpath of a file 
+  get() {
+    file=$1
+    echo "Location of the file copied to clipboard"
+    realpath "$file" | xclip -select clipboard
+}
+
+# Nmap detailed scan
+nmap_full() {
+    nmap -p- $1 --min-rate 5000 | grep -w open | awk "{print $1}" | tr "\n" "," | sed "s/,$//" | xargs -I{} nmap -sCV -T4 -p {} $1 -oN
+}
+
+# Less Help Verbose
+gethelp(){
+    $1 --help --verbose | less
+}
+
+## Opens fuzzy finder for navigating to directory
 fcd() {
    cd "$(find -type d | fzf)"
 } 
+
+## Opens fuzzy finder for navigating 
 open(){
     xdg-open "$(find -type f | fzf)" 
 }
 
 
 # Created by `pipx` on 2023-12-19 19:52:04
-export PATH="$PATH:/home/bluesniffer/.local/bin"
+#export PATH="$PATH:/home/bluesniffer/.local/bin"
+export PATH="/home/bluesniffer/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/local/games:/usr/games:/home/bluesniffer/.local/bin"

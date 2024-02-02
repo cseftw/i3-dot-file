@@ -125,6 +125,7 @@ alias vim="nvim"
 alias vpnip="ip -4 addr show tun0 | grep -oP \"(?<=inet\s)\d+(\.\d+){3}\""
 alias pwdcp="echo -n $(pwd) | xclip -selection clipboard"
 alias ctc="tr -d '\n' | xclip -selection c"
+alias simba="aria2c -x 16 -s 16"
 
 #functions
 

@@ -9,7 +9,7 @@ font pango:RobotoMono Nerd Font Regular 9
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec alacritty 
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -98,7 +98,7 @@ bindsym $mod+Shift+0 move container to workspace $workspace10
 
 assign [class="discord"] $workspace10
 assign [class="Firefox-esr"] $workspace2
-assign [class="Joplin"]$workspace9
+assign [class="obsidian"]$workspace9
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -193,7 +193,7 @@ bindsym XF86AudioPrev exec playerctl previous
 
 exec firefox
 exec discord
-exec joplin
+exec obsidian
 
 #exec_always ~/.config/polybar/launch.sh &
 
@@ -210,3 +210,8 @@ exec --no-startup-id nm-applet &
 #Start polkit-gnome-authentication-agent-1 which ask for authentication
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
+#Start Firefox-esr
+bindsym $mod+F1 exec /usr/bin/firefox
+
+# Display the system menu 
+bindsym $mod+z exec "rofi -show powermenu:~/.config/rofi/powermenuscript"

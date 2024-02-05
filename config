@@ -210,3 +210,9 @@ exec --no-startup-id nm-applet &
 #Start polkit-gnome-authentication-agent-1 which ask for authentication
 exec --no-startup-id /usr/lib/policykit-1-gnome/polkit-gnome-authentication-agent-1
 
+#Start Firefox-esr
+bindsym $mod+F1 exec /usr/bin/firefox
+
+#Display the power options menu 
+bindsym $mod+z exec "rofi -show powermenu:~/.config/rofi/powermenuscript
+
